@@ -50,5 +50,14 @@ int main() {
 		if (randomNumbers[i] % 2 == 0) {
 			evenCount++; // This increments the count if the number is even
 		}
+		else {
+			oddCount++; // This increments the count if the number is odd
+		}
 	}
+
+	//This will print out the counts of even and odd numbers
+	std::cout << "Number of even numbers in the list: " << evenCount << std::endl;
+	std::cout << "Number of odd numbers in the list: " << oddCount << std::endl;
+
+	return(0);
 }
