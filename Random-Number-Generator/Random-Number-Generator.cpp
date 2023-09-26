@@ -18,7 +18,37 @@ int main() {
 
 	//This is the loop that generates the 6 different numbers between 10 and 20
 
+	for (int i = o; i < 6; ++i) {
+		int randomNumber;
+		do {
+			//Generate a random number between 10 and 20
+			randomNumber = 10 + (std::rand() % 11);
 
+			bool isDuplicate = false;
+			//Checks if the number is already in the list
+			for (int j = 0; j < i; ++j) {
+				if (randomNumber == randomNumbers[j]) {
+					isDuplicate = true;
+					break;
+				}
+			}
+			//If the number is not a duplicate, it will store it and break the loop
+			if (!isDuplicate) {
+				randomNumbers[i] = randomNumber;
+				break;
+			}
+		} while (true);
+	}
+	//This will output the generated numbers
+	for (int i = 0; i < 6; ++i) {
+		std::cout << randomNumbers[i] << " ";
+	}
+	std::cout << std::endl;
 
-
+	//This counts the even and odd numbers
+	for (int i = 0; i < 6; ++i) {
+		if (randomNumbers[i] % 2 == 0) {
+			evenCount++; // This increments the count if the number is even
+		}
+	}
 }
